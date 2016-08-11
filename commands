@@ -1,0 +1,20 @@
+mkdir temp
+cp filetest.jar temp
+cd temp
+echo "filetest.jar" > .gitignore
+time java -jar filetest.jar
+time git init
+time git add --all
+time git commit -m "Initial commit"
+time echo "Bla" > test1
+time git add test1
+time git commit -m "Changed test1"
+time git status
+time for i in `seq 1 1000000` ; do echo "bla$i" > test$i ; done
+time git status
+time git add --all
+time git status
+time git commit -m "Changed all files"
+time git status
+cd ..
+time rm -rf temp
