@@ -10,7 +10,7 @@ time echo "Bla" > test1
 time git add test1
 time git commit -m "Changed test1"
 time git status
-time for i in `seq 1 1000000` ; do echo "bla$i" > test$i ; done
+COUNT="0"; while [ $COUNT -lt 1000000 ] ; do COUNT=$((1+COUNT)) && echo "bla$COUNT" > test$COUNT ; done
 time git status
 time git add --all
 time git status
